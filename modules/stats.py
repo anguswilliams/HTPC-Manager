@@ -79,7 +79,7 @@ class Stats:
                                 'devfs', 'devpts', 'devtmpfs', 'hugetlbfs',
                                 'iso9660', 'linprocfs', 'mqueue', 'none',
                                 'proc', 'procfs', 'pstore', 'rootfs',
-                                'securityfs', 'sysfs', 'usbfs', '']
+                                'securityfs', 'sysfs', 'usbfs', 'tmpfs', '']
 
         #Adds the mointpoints that the user wants to ignore to the list of ignored ignorepoints
         user_ignore_mountpoint = htpc.settings.get('stats_ignore_mountpoint')
@@ -88,7 +88,6 @@ class Stats:
         if not user_ignore_mountpoint:
             pass
         else:
-            ignore_mntpoint += user_ignore_mountpoint.split()
             ignore_mntpoint += user_ignore_mountpoint.split(',')
 
         #Adds the filesystem that the user wants to ignore to the list of ignored filesystem
@@ -98,7 +97,6 @@ class Stats:
         if not user_ignore_filesystem:
             pass
         else:
-            ignore_fstypes += user_ignore_filesystem.split()
             ignore_fstypes += user_ignore_filesystem.split(',')
 
         try:
