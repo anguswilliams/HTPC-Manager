@@ -89,6 +89,7 @@ class Stats:
             pass
         else:
             ignore_mntpoint += user_ignore_mountpoint.split()
+            ignore_mntpoint += user_ignore_mountpoint.split(',')
 
         #Adds the filesystem that the user wants to ignore to the list of ignored filesystem
         user_ignore_filesystem = htpc.settings.get('stats_ignore_filesystem')
@@ -98,6 +99,7 @@ class Stats:
             pass
         else:
             ignore_fstypes += user_ignore_filesystem.split()
+            ignore_fstypes += user_ignore_filesystem.split(',')
 
         try:
 
